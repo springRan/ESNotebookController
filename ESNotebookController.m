@@ -78,15 +78,15 @@
 	
 	if(notebookIndex < 0 || notebookIndex > numberOfNotes) notebookIndex = 0;
 	
-<<<<<<< HEAD
+
 	if(notebookIndex < numberOfNotes - 1) nextNoteButton.enabled = YES;
 	
 	if(notebookIndex > 0) prevNoteButton.enabled = YES;
-=======
+
 	if(notebookIndex < numberOfNotes - 1) nextNoteButton.hidden = NO;;
 	
 	if(notebookIndex > 0) prevNoteButton.hidden = NO;;
->>>>>>> cleanup
+
 	
 	if(numberOfNotes) {
 		
@@ -97,15 +97,14 @@
 		if(!disableDelete) deleteNoteButton.hidden = NO;
 		
 		if(disableEdit) noteTextView.editable = NO;
-		
-<<<<<<< HEAD
+
 		if(disableEdit) closeNoteButton.hidden = YES;
 		
 		if(useWithTabbar) {
 			tools.center = CGPointMake(tools.center.x,tools.center.y - 44);
 			
 			CGRect viewFrame = [noteTextView frame];
-=======
+
 		if(disableClose) closeNoteButton.hidden = YES;
 		
 		if(useWithTabbar) {
@@ -113,7 +112,7 @@
 			
 			noteTextView.frame = CGRectMake(20, 98, 300, 294);
 			CGRect viewFrame = noteTextView.frame;
->>>>>>> cleanup
+
 			viewFrame.size.height -= 44;
 			noteTextView.frame = viewFrame;
 		}
@@ -175,13 +174,12 @@
 - (void)nextNote {
 	notebookIndex++;
 	[self retrieveTitleNoteAndDateAtIndex:notebookIndex];
-<<<<<<< HEAD
+
 	if (notebookIndex == numberOfNotes-1) nextNoteButton.enabled = NO;
 	prevNoteButton.enabled = YES;
-=======
+
 	if (notebookIndex == numberOfNotes-1) nextNoteButton.hidden = YES;;
 	prevNoteButton.hidden = NO;;
->>>>>>> cleanup
 	
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:1];
@@ -200,13 +198,12 @@
 - (void)prevNote {
 	notebookIndex--;
 	[self retrieveTitleNoteAndDateAtIndex:notebookIndex];
-<<<<<<< HEAD
+
 	if (notebookIndex == 0) prevNoteButton.enabled = NO;
 	nextNoteButton.enabled = YES;
-=======
+
 	if (notebookIndex == 0) prevNoteButton.hidden = YES;;
 	nextNoteButton.hidden = NO;;
->>>>>>> cleanup
 	
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:1];
