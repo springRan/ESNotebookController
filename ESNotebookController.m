@@ -77,16 +77,10 @@
 	}
 	
 	if(notebookIndex < 0 || notebookIndex > numberOfNotes) notebookIndex = 0;
-	
 
-	if(notebookIndex < numberOfNotes - 1) nextNoteButton.enabled = YES;
+	if(notebookIndex < numberOfNotes - 1) nextNoteButton.hidden = NO;
 	
-	if(notebookIndex > 0) prevNoteButton.enabled = YES;
-
-	if(notebookIndex < numberOfNotes - 1) nextNoteButton.hidden = NO;;
-	
-	if(notebookIndex > 0) prevNoteButton.hidden = NO;;
-
+	if(notebookIndex > 0) prevNoteButton.hidden = NO;
 	
 	if(numberOfNotes) {
 		
@@ -94,17 +88,13 @@
 		
 		if(!disableEmail) emailNoteButton.hidden = NO;
 		
+		if(disableEdit) {
+			noteTextView.editable = NO;
+			disableDelete = YES;
+		}
+		
 		if(!disableDelete) deleteNoteButton.hidden = NO;
 		
-		if(disableEdit) noteTextView.editable = NO;
-
-		if(disableEdit) closeNoteButton.hidden = YES;
-		
-		if(useWithTabbar) {
-			tools.center = CGPointMake(tools.center.x,tools.center.y - 44);
-			
-			CGRect viewFrame = [noteTextView frame];
-
 		if(disableClose) closeNoteButton.hidden = YES;
 		
 		if(useWithTabbar) {
